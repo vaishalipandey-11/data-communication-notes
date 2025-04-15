@@ -1,0 +1,72 @@
+📘 1.2 NETWORKS
+
+🔹 Network
+
+    A network is a collection of devices (nodes) connected by communication links.
+    A node can be any device (computer, printer, etc.) capable of sending/receiving data.
+
+🔹 Distributed Processing
+
+    A method where tasks are divided among multiple computers instead of being handled by one big system.
+    Each computer (usually a PC or workstation) handles a subset of the overall task.
+    Workstation: A high-performance personal computer used for tasks like software development, graphics design, etc., usually connected to a network.
+
+📘 Network Criteria
+    ✅ 1. Performance
+            Measured by:
+            Transit Time: Time for a message to go from sender to receiver.
+            Response Time: Time between a request and its response.
+
+            Depends on:
+            Number of users,  Type of transmission medium ,Hardware capabilities, Software efficiency
+
+        📊 Key Metrics:
+            Throughput: Total data transmitted successfully per second (e.g., Mbps).
+            Delay: Time it takes for data to travel from source to destination.
+            More throughput often increases delay due to congestion.
+
+    ✅ 2. Reliability
+        Refers to accuracy and consistency of data delivery.
+        Measured by:
+        Failure rate
+        Recovery time after failure
+        Robustness during disasters
+
+    ✅ 3. Security
+        Involves protecting:
+        Data from unauthorized access
+        Data from corruption or loss
+        Recovery from breaches
+
+📘 Physical Structures
+    🔹 Link: A communication pathway that transfers data between two devices.
+
+    🔹 Type of Connection ->
+
+    🔸 Point-to-Point
+
+        A dedicated link between two devices.
+        Full capacity is used only by those two.
+        Examples:  Infrared remote to TV,Microwave or satellite links
+        
+        [Device A] ────────────── [Device B]
+                ↑                        ↑
+            Sender                 Receiver
+                (or vice versa)
+
+
+    🔸 Multipoint (Multidrop)
+
+        A shared link among more than two devices.
+        Sharing can be:
+        Spatially: All use link at once.
+        Temporally: Devices take turns using the link.
+
+                 ┌─────────────┐
+                 │             │
+            [Device A]   [Device B]   [Device C]
+                 │             │           │
+                 └──── Shared Communication ────┘
+                            Line
+
+
