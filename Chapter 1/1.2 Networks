@@ -45,14 +45,14 @@
 
     🔸 Point-to-Point
 
-        A dedicated link between two devices.
+        A dedicated link between two devices.                                                                        
         Full capacity is used only by those two.
         Examples:  Infrared remote to TV,Microwave or satellite links
         
         [Device A] ────────────── [Device B]
                 ↑                        ↑
-            Sender                 Receiver
-                (or vice versa)
+            Sender                 Receiver       (or vice versa)
+              
 
 
     🔸 Multipoint (Multidrop)
@@ -63,10 +63,135 @@
         Temporally: Devices take turns using the link.
 
                  ┌─────────────┐
-                 │             │
             [Device A]   [Device B]   [Device C]
                  │             │           │
                  └──── Shared Communication ────┘
                             Line
 
+
+🔗 Physical Topology
+   The physical topology defines how devices are physically connected in a network. It shows the layout of cables and nodes.
+
+📌 Types of Physical Topologies
+        1. Mesh Topology
+         Every node connects to every other node directly.
+         Uses dedicated point-to-point links.
+         Number of links = n(n - 1)/2, where n = number of nodes.
+
+            Pros:
+            High reliability (one link failure doesn’t affect others)
+            Excellent fault isolation
+            High security & privacy
+
+            Cons:
+            Expensive due to many cables & ports
+            Difficult to install and manage
+
+           Use case: WAN backbones, telecom core networks
+
+       2. Star topology
+
+        All devices connect to a central hub/switch,Communication goes via the hub only.
+
+        Pros:
+        Easy to install & manage
+        Fault isolation is simple
+        Scalable (just plug into hub)
+        Cons:
+        Hub is a single point of failure
+        More cable than ring or bus
+
+        ✅ Use case: Common in LANs (office, home setups)
+
+        3. Bus Topology
+
+        All nodes share a single central backbone cable.
+        Devices connect via drop lines and taps.
+
+        Pros:
+        Cheap & easy to install
+        Less cabling needed
+        Cons:
+        Difficult fault detection
+        Break in backbone = network down
+        Limited cable length and number of devices
+
+        ✅ Use case: Early Ethernet LANs (now outdated)
+
+        4. Ring Topology
+
+        Each device connects to two neighbors (forms a ring).
+        Data travels in one direction (can be bidirectional with dual ring).
+
+        Pros:
+        Easy to install
+        Each node acts as a repeater
+        Fault isolation is easier
+        Cons:
+        A single node failure can crash the network
+        Hard to troubleshoot
+
+        ✅ Use case: Token Ring networks, SONET
+
+        5. Hybrid Topology
+
+        A combination of two or more topologies.
+        E.g., Star backbone with bus branches.
+
+        Pros:
+        Flexible and scalable
+        Customized as per needs
+        Cons:
+        Complex design and costly
+
+        ✅ Use case: Modern enterprise networks
+      
+            {       Repeater = Device to amplify/regenerate signal ,      Drop Line = Cable from device to backbone  ,
+                    Tap = Connector that links drop line to backbone  ,   Hub = Central connection point   ,           Robust = Can handle failures       
+                    I/O Ports = Input/Output hardware interfaces  ,       Spatially Shared = Simultaneous use   ,      Time Shared = One at a time
+            }
+
+         🧠 Network Models
+
+
+        Why? -> To standardize communication between different systems (heterogeneous = diverse).
+
+        Models:
+        OSI: 7 layers (reference model).
+        Internet (TCP/IP): 5 layers (practical, used in book).
+
+        🌐 Categories of Networks
+
+        1️⃣ LAN (Local Area Network)
+
+        Scope: Small area (home, office, campus).
+        Owned by: Private entities.
+        Purpose: Share resources (printers, files, software).
+        Range: Up to few km.
+        Speed: Old: 4–16 Mbps, Now: 100 Mbps – 1 Gbps+
+        Wireless LAN: Uses Wi-Fi.
+
+        Hub: Central connector ,  Server: Provides shared resources , Topology: Structure of the network 
+
+        
+        2️⃣ WAN (Wide Area Network)
+
+        Scope: Large area (country/world).
+        Purpose: Long-distance data/audio/video transmission.
+        Types:
+        Switched WAN: Multiple connections via routers/switches (e.g., Internet).
+        Point-to-Point WAN: Direct link (e.g., PC ↔ ISP).
+
+        Examples:
+        X.25 → Old  , Frame Relay → Faster  , ATM → Fixed-size packets (cells) , Wireless WAN → Cellular/satellite
+
+        Router: Directs traffic between networks. , Modem: Converts digital ↔ analog.
+
+        3️⃣ MAN (Metropolitan Area Network)
+
+        Scope: City/town — in between LAN & WAN.
+        Use: High-speed Internet across a city.
+        Examples:
+        DSL: From telecom companies.
+        Cable TV networks: Also used for Internet now.
 
