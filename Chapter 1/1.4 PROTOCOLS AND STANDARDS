@@ -1,0 +1,33 @@
+    🔹 Protocols
+        A protocol = set of rules for communication.
+        Defines what, how, and when data is sent.
+        Key elements:
+        Syntax – structure/format of data
+        Semantics – meaning of bits/actions taken
+        Timing – when and how fast to send data
+
+    🔹 Standards
+        Ensure interoperability and fair competition.
+        Types:
+        De facto – by common use (not officially approved)
+        De jure – officially legislated by recognized bodies
+
+    🔹 Standards Organizations
+        ISO – Global standardization
+        ITU-T – Telecommunication standards (part of UN)
+        ANSI – U.S. private organization for national standards
+        IEEE – Sets computing & networking standards
+        EIA – Defines physical and electrical interface standards
+
+    🔹 Forums
+        Formed by companies to quickly test and adopt new tech.
+        Work faster than formal standards committees.
+
+    🔹 Regulatory Agencies
+        FCC (U.S.) – Regulates communication tech to protect public interest.
+
+    🔹 Internet Standards Process
+        1. Starts as Internet Draft (6-month valid, no official status)
+        2.  Becomes RFC (Request for Comment)
+        3.  Passes maturity levels → becomes an Internet Standard
+

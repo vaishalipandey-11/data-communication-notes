@@ -1,0 +1,29 @@
+    ✅ Network Models
+        🔹 What is a Network?
+            A network = hardware + software that enables data transmission.
+            Hardware: Physical equipment (cables, routers).
+            Software: Instructions & services (e.g., email, file transfer).
+
+        🔹 Layered Approach in Networking
+            Used to divide complex networking tasks into manageable layers, like solving a math problem using hardware and software.
+
+
+       🔹 Hierarchy & Order
+            Each layer depends on the one below it.
+            Tasks follow a strict top-down (send) and bottom-up (receive) order.
+            Example: You can’t pick up a letter that hasn’t been dropped in the mailbox.
+        
+        🔹 Services Concept
+            Higher layer uses services of the lower layer.
+            Each layer performs a specific function and passes data to the next.
+
+        🔹 Network Models Overview
+            1. OSI Model (Pre-1990)
+                7-layer model for standardizing networking.
+                Was expected to dominate but never fully implemented.
+
+            2. TCP/IP Model
+                Became dominant due to practical use on the Internet.
+                Real-world success, unlike theoretical OSI.
+
+     

@@ -1,0 +1,61 @@
+📡 1.3 – The Internet
+
+    🌐 What is the Internet?
+        The Internet is a structured, global communication system connecting millions of users and organizations.
+        It enables diverse activities: emailing, online shopping, bill payments, reservations, research, etc.
+
+    🧠 Key Terms
+        Network: A group of interconnected devices (e.g., computers, printers).
+        internet (lowercase): Two or more networks that can communicate.
+        Internet (uppercase): The global system of interconnected internets, forming a massive network of networks.
+
+    📜 Brief History of the Internet
+        ⚙️ 1960s – The Beginning
+        Computers were standalone and incompatible across manufacturers.
+        ARPA (Advanced Research Projects Agency) of the U.S. DoD wanted to enable communication between research computers to share results and avoid duplication.
+
+        🧩 1967 – ARPANET Concept
+            Proposed at an ACM meeting.
+            Each host computer connected to a special device called IMP (Interface Message Processor).
+            IMPs would communicate with each other and their respective hosts.
+
+        🧪 1969 – ARPANET Launched
+            First four nodes:-> UCLA,  UCSB, SRI (Stanford Research Institute), University of Utah
+            Used NCP (Network Control Protocol) to enable communication between hosts.
+
+    🔗 The Birth of TCP/IP
+        🧠 1972–73 – Cerf & Kahn's Contributions
+            Proposed the Internetting Project.
+            Introduced the concept of end-to-end communication using: Encapsulation ,Datagrams, Gateways
+            Developed TCP (Transmission Control Protocol) for reliable delivery.
+
+        🔄 Splitting TCP into Two Protocols
+            TCP – Handles higher-level tasks like segmentation, reassembly, error detection.
+            IP (Internet Protocol) – Manages routing of datagrams.
+            Together they form the TCP/IP protocol suite, the foundation of the modern Internet.
+
+   🌍 The Internet Today 
+
+    🔹 1. Internet Structure
+        Not hierarchical; it's a mesh of global networks.
+        Continuously evolving: networks added/removed.
+        Mainly private sector-run now (not government).
+
+    🔹 2. Internet Service Providers (ISPs) Hierarchy
+        🌐 International ISPs
+            Top-level; connect countries together.
+
+        🏢 National ISPs
+            Large backbone networks (e.g., SprintLink, UUNet).
+            Connected via:
+            NAPs (Network Access Points) – public switching stations.
+            Peering Points – private, high-speed interconnections (up to 600 Mbps).
+
+        📡 Regional ISPs
+            Mid-tier; connect to national ISPs.
+            Serve smaller areas with lower data rates.
+
+        🏠 Local ISPs
+            Provide direct access to end users.
+            May connect to regional or national ISPs.
+            Can be companies, universities, or organizations.

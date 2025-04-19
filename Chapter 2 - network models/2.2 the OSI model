@@ -1,0 +1,47 @@
+    📦 OSI Model – 7 Layer Network Architecture
+        🔹 Full Form: OSI = Open Systems Interconnection
+        🔹 Introduced by: ISO (International Standards Organization) in late 1970s
+        🔹 Purpose: To standardize network communication between heterogeneous systems
+        🔹 Type: Conceptual model, not a protocol
+        🔹 Benefit: Interoperability, modularity, flexibility
+
+    📚 7 Layers of OSI Model (Bottom to Top)
+        Layer | Name         | Function (Keyword)                   | Data Unit
+            1 | Physical     | Transmission of raw bits             | Bits
+            2 | Data Link    | Framing, error detection, MAC        | Frame
+            3 | Network      | Routing, logical addressing (IP)     | Packet
+            4 | Transport    | End-to-end delivery, segmentation    | Segment
+            5 | Session      | Establish/Manage/Terminate sessions  | Data
+            6 | Presentation | Encryption, compression, translation | Data
+            7 | Application  | User interface, network services     | Data
+
+    🔄 Working Mechanism
+        Each layer on the sender side:
+            ➤ Adds its own header (H) (and sometimes trailer)
+            ➤ Passes it to the layer below
+            At receiver:
+            ➤ Each layer removes its respective header, processes info, and passes up.
+            This process = Encapsulation & De-encapsulation
+
+        🔗 Layer Communication
+            Peer-to-peer communication:
+            Each layer on device A talks logically to the same layer on device B via a protocol.
+
+            Adjacent layer communication (interface):
+            Layers interact directly within the same device using well-defined interfaces.
+
+        🧱 Layer Groups
+            Group               | Layers        | Purpose
+            Network Support     | 1 – 2 – 3     | Data movement across devices
+            User Support        | 5 – 6 – 7     | App-level communication
+            Transition Layer    | 4 (Transport) | Links user & network support layers
+
+       ⚙️ Key Concepts
+            Encapsulation:  Wrapping data with headers/trailers as it moves down the layers
+            Decapsulation: Unwrapping headers/trailers as data moves up the layers
+            Only Layers 1–3 are used by intermediate nodes (routers/switches).
+
+        🔍 Mnemonic to Remember Layers (Top to Bottom):
+        "All People Seem To Need Data Processing"
+        Application – Presentation – Session – Transport – Network – Data Link – Physical
+
