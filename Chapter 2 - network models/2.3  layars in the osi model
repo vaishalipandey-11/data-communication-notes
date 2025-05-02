@@ -1,0 +1,172 @@
+🔹 Physical Layer – OSI Model (Layer 1)
+    📌 Primary Role
+       Responsible for transmitting raw bits (0s and 1s) from one node to the next over a physical medium.
+
+    🔧 Key Functions
+        Physical Characteristics of Interfaces & Medium
+        Specifies hardware (cables, connectors, etc.) and transmission media (wire, fiber, wireless).
+
+    Bit Representation (Encoding)
+        Converts bits into signals (electrical/optical).
+        Defines encoding schemes like NRZ, Manchester, etc.
+
+    Data Rate
+        Defines transmission rate in bits per second (bps).
+        Also defines bit duration (how long each bit lasts).
+
+    Bit Synchronization
+        Ensures sender and receiver clocks are aligned at the bit level.
+        Crucial for accurate data interpretation.
+
+    Line Configuration
+        Point-to-Point: Dedicated link between two devices.
+        Multipoint: Shared link among multiple devices.
+
+    Physical Topology.
+
+    Transmission Mode
+        Simplex: One-way only (e.g., keyboard to CPU).
+        Half-Duplex: Two-way, but one at a time (e.g., walkie-talkie).
+        Full-Duplex: Two-way, simultaneously (e.g., phone call).
+
+🔹 Data Link Layer – OSI Model (Layer 2)
+    📌 Primary Role
+     Converts the unreliable bit-oriented physical layer into a reliable frame-oriented link by ensuring error detection, framing, and flow control.
+
+    🔧 Key Responsibilities
+    Framing
+        Breaks the bit stream from the network layer into frames (data units).
+        Adds headers/trailers to clearly mark the frame boundaries.
+
+    Physical Addressing
+        Adds the MAC (Media Access Control) address of the sender/receiver to the frame header.
+        Ensures correct delivery within the same network (hop-to-hop).
+
+    Flow Control
+        Prevents the receiver from being overwhelmed by controlling the rate of data transmission.
+        Uses techniques like stop-and-wait and sliding window.
+
+    Error Control
+        Ensures error detection and correction (or retransmission).
+        Uses checksums, CRC, or parity bits in the trailer.
+        Can detect lost/damaged/duplicate frames.
+
+    Access Control
+        Determines which device can access the shared link when multiple devices are connected.
+        Used in environments like LANs with CSMA/CD, Token Passing, etc.
+
+    🔄 Hop-to-Hop Delivery
+        Ensures communication between adjacent nodes (e.g., A ➝ B ➝ E ➝ F).
+        Each hop uses new frames with updated source and destination MAC addresses.
+        This is not end-to-end delivery (handled by Network Layer).
+
+ 🔹 Network Layer – OSI Model (Layer 3)
+    📌 Primary Role
+     Responsible for source-to-destination delivery of packets across multiple networks (end-to-end delivery).
+
+    🔧 Key Responsibilities
+    Logical Addressing
+        Adds a logical address (e.g., IP address) to each packet.
+        Used for global identification of source and destination.
+        Unlike MAC (physical) addresses, logical addresses remain constant across networks.
+
+    Routing
+        Determines the best path for a packet to travel from source to destination.
+        Uses routing algorithms and routing tables maintained by routers.
+        Handles inter-network communication by forwarding packets between independent networks.
+
+    Packet Delivery
+        Ensures that packets are delivered from one host to another, possibly through multiple routers.
+        Achieves end-to-end communication (unlike Data Link Layer, which is hop-to-hop).
+
+    🔄 Source-to-Destination Delivery
+     Involves multiple intermediate routers (e.g., A ➝ B ➝ E ➝ F).
+
+    Each router:
+        Reads destination IP in the packet header.
+        Uses routing table to decide the next hop.
+        Forwards the packet accordingly. 
+
+  🔹 Transport Layer – OSI Model (Layer 4)
+    📌 Primary Role
+        Responsible for process-to-process delivery of a complete message, ensuring it arrives intact, in order, and without errors.
+
+        🌐 Network Layer → Host-to-host delivery
+        ⚙️ Transport Layer → Process-to-process delivery (within hosts)
+
+    🔧 Key Responsibilities
+        Service-Point Addressing (Port Addressing)
+        Each process on a device is assigned a port number.
+
+        Transport layer uses port numbers to identify the specific sending and receiving processes.
+        E.g., HTTP → port 80, HTTPS → port 443
+
+    Segmentation and Reassembly
+        Breaks large messages into segments for transmission.
+        Adds sequence numbers to help reassemble them correctly at the destination.
+        Helps identify missing or out-of-order segments.
+
+    Connection Control
+        Can be:
+        Connectionless (e.g., UDP): no prior handshake.
+        Connection-oriented (e.g., TCP): establishes a connection before data transfer (like a phone call).
+        Ensures reliable communication in connection-oriented mode.
+
+    Flow Control
+        Manages data rate between source and destination processes.
+        Prevents buffer overflow if the receiver is slower than the sender.
+        End-to-end flow control (unlike hop-to-hop in Data Link Layer).
+
+    Error Control
+        Ensures the entire message is delivered without:Loss, Damage,Duplication
+        Achieved via acknowledgment & retransmission.
+        Operates end-to-end between processes.      
+
+
+ 🔷 Session Layer (Layer 5) – OSI Model
+        📌 Main Role
+          Acts as the dialog controller between systems; responsible for establishing, maintaining, and synchronizing sessions between communicating applications.
+
+        🔧 Responsibilities
+        Dialog Control
+        Manages dialog between two devices.
+
+        Supports:
+        Half-duplex: one-way communication at a time.
+        Full-duplex: two-way communication simultaneously.
+
+        Synchronization
+        Adds checkpoints (sync points) in data stream.
+        Helps in resuming transmission after failure without re-sending the entire data.
+        Example: Checkpoint every 100 pages while transferring a large file; if crash occurs at page 523, only pages 501–523 need re-sending.
+
+      
+
+🔷 Presentation Layer (Layer 6) – OSI Model
+    📌 Main Role
+        Handles the syntax and semantics of the data exchanged between applications. Ensures interoperability between different systems.
+
+    🔧 Responsibilities
+        Translation
+        Converts data between application formats and network formats.
+        Ensures compatibility between different data encoding methods (e.g., ASCII ↔ EBCDIC).
+
+        Encryption/Decryption
+        Converts plaintext to ciphertext for secure transmission.
+        At receiver’s end, decrypts ciphertext back to original data.
+
+        Compression/Decompression
+        Reduces data size to improve transmission speed and efficiency.
+        Crucial for multimedia data (text, audio, video).
+
+  🌐 Application Layer (Layer 7 of OSI Model)
+    🔸 Main Role:
+      Provides network services directly to the user (either a human or software).
+
+    🔸 Purpose:
+     Helps users interact with the network via apps like email, file transfer, remote login, and directories.
+
+    🔸 Works closely with:
+    The Presentation Layer (which handles data formatting, encryption, etc.)
+
+     
