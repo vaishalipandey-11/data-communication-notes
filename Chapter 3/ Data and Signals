@@ -1,0 +1,141 @@
+# Chapter 3: Data and Signals –
+
+## 📌 1. Analog vs. Digital Signals
+
+| Feature        | Analog Signal        | Digital Signal         |
+|----------------|----------------------|--------------------------|
+| Nature         | Continuous            | Discrete (0 and 1)       |
+| Examples       | Human voice, light    | Computer data, files     |
+| Use Cases      | AM/FM radio           | Internet, networking     |
+| Visual         | Sine wave             | Square pulse             |
+
+> ✅ Digital signals are more reliable in transmission: less noise, easy regeneration, encryption.
+
+---
+
+## 📌 2. Signal Characteristics
+
+| Term         | Definition                  | Unit / Formula              |
+|--------------|-----------------------------|-----------------------------|
+| Amplitude    | Strength of signal           | Volts                       |
+| Frequency (f)| Cycles per second            | Hz → \( f = \frac{1}{T} \)  |
+| Period (T)   | Duration of one cycle        | Seconds → \( T = \frac{1}{f} \) |
+| Phase        | Timing of wave               | Degrees (°)                 |
+| Wavelength (λ)| Signal distance per cycle   | \( \lambda = \frac{v}{f} \) |
+
+---
+
+## 📌 3. Composite Signals & Bandwidth
+
+- Non-sinusoidal signals are a mix of sine waves → Fourier analysis
+- **Bandwidth (Hz)** = Range of frequencies \( f_{\text{high}} - f_{\text{low}} \)
+
+---
+
+## 📌 4. Digital Concepts
+
+| Concept        | Explanation                        |
+|----------------|-------------------------------------|
+| Bit Rate       | Bits per second (bps) = \( \frac{\text{bits}}{\text{second}} \) |
+| Bit Interval   | Time for one bit = \( \frac{1}{\text{bit rate}} \) |
+| Baud Rate      | Number of signal changes per second |
+| Line Coding    | Converts digital bits to signal     |
+
+> ⚠️ Bit rate ≠ Baud rate always. Bit rate = Baud rate × bits per signal.
+
+---
+
+## 📌 5. Transmission Impairments
+
+| Impairment     | Description                          | Example                |
+|----------------|--------------------------------------|------------------------|
+| Attenuation    | Signal strength decreases             | Long cable distances   |
+| Distortion     | Signal components arrive unequally    | Voice delay on calls   |
+| Noise          | Unwanted signals                      | Crosstalk, thermal     |
+
+> 🔁 Use repeaters to fight attenuation and remove noise.
+
+---
+
+## 📌 6. Theoretical Data Rate Formulas
+
+### ✅ Nyquist Bit Rate (No noise)
+\[
+\text{Max Bit Rate} = 2 × B × \log_2 L
+\]
+- B = Bandwidth (Hz), L = Number of signal levels
+
+### ✅ Shannon Capacity (With noise)
+\[
+C = B × \log_2(1 + SNR)
+\]
+- SNR = Signal-to-noise ratio (pure number)
+
+**Convert SNR from dB to raw**:
+\[
+\text{SNR} = 10^{(SNR_{dB}/10)}
+\]
+
+---
+
+## 📌 7. Performance Metrics
+
+| Metric         | Description                          |
+|----------------|--------------------------------------|
+| Bandwidth      | Capacity of the channel               |
+| Throughput     | Actual data rate achieved             |
+| Latency        | Total delay in data transmission      |
+| Jitter         | Variance in latency (important in VoIP) |
+
+### ⚙️ Latency Components:
+\[
+\text{Total Latency} = d_{\text{prop}} + d_{\text{trans}} + d_{\text{queue}} + d_{\text{proc}}
+\]
+
+| Delay Type            | Formula / Meaning                       |
+|------------------------|-----------------------------------------|
+| Propagation Delay      | \( \frac{\text{Distance}}{\text{Speed}} \) |
+| Transmission Delay     | \( \frac{\text{Packet Size}}{\text{Bandwidth}} \) |
+| Processing Delay       | Time for route lookup, checking headers |
+| Queuing Delay          | Waiting in router queues                |
+
+---
+
+## 📚 Final Formula Sheet
+
+| Concept         | Formula                                   |
+|-----------------|--------------------------------------------|
+| Bit Rate        | \( \frac{\text{bits}}{\text{second}} \)    |
+| Period / Frequency | \( T = \frac{1}{f}, f = \frac{1}{T} \)  |
+| Bandwidth       | \( f_{\text{high}} - f_{\text{low}} \)     |
+| Nyquist         | \( 2B \log_2 L \)                          |
+| Shannon         | \( B \log_2 (1 + SNR) \)                   |
+| Latency         | Prop + Trans + Proc + Queue               |
+| SNR (dB)        | \( 10 \log_{10} SNR \)                     |
+
+---
+> - Know when to use **Nyquist** (ideal, noiseless) vs **Shannon** (practical, noisy)
+> - Be ready to explain **impairments** and **delay types** with real-world examples.
+
+Impairments (Real-world Examples)
+Attenuation: The reduction in signal strength as it travels over a medium.
+Example: Signal loss over long-distance telephone lines.
+Distortion: The change in signal shape due to the medium's properties.
+Example: Audio distortion in old radio signals due to poor quality transmission.
+Noise: Unwanted signals that interfere with the main signal.
+Example: Static in a phone call caused by electrical interference.
+Interference: The superposition of signals from other sources that disrupt the communication.
+Example: Wi-Fi interference when multiple routers are operating on the same frequency.
+
+Delay Types (Real-world Examples)
+Propagation Delay: Time it takes for a signal to travel from the sender to the receiver.
+Example: Satellite communication has high propagation delay because the signals must travel long distances to space.
+Transmission Delay: Time taken to push all the bits of a message into the transmission medium.
+Example: Sending a large file over a slow internet connection.
+Processing Delay: Time spent processing the signal or packet by routers or devices.
+Example: Processing a webpage request in a server, which involves decoding, encryption, etc.
+Queueing Delay: Time spent waiting in a buffer or queue before the signal is transmitted.
+Example: Delay in video streaming if the network is congested, causing buffering.
+
+
+

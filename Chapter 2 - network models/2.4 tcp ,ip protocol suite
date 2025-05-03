@@ -1,0 +1,60 @@
+    🧩 TCP/IP Protocol Suite (Internet Protocol Suite)
+        🔹 Developed before OSI model
+        🔹 Originally had 4 layers, later represented as 5 layers for OSI comparison.
+
+    📊 TCP/IP vs OSI Layer Mapping
+        OSI Model	        TCP/IP Model
+        Application	        Application
+        Presentation        	↘
+        Session             	↘
+        Transport	        Transport
+        Network	            Internet (IP)
+        Data Link + Physical	Host-to-Network
+
+    🔸 TCP/IP's Application layer = OSI's Application + Presentation + Session
+
+    ⚙️ TCP/IP Layers and Functions
+        1. Host-to-Network (Physical + Data Link)
+            Supports standard LAN/WAN protocols (Ethernet, WiFi, etc.)
+
+            No specific protocols defined by TCP/IP here.
+
+        2. Internet Layer
+            IP (Internet Protocol): Unreliable, connectionless, best-effort delivery
+            → Sends datagrams (can arrive out-of-order or be lost)
+
+            Supporting Protocols:
+            ARP: Maps IP address → MAC address
+            RARP: Maps MAC address → IP address
+            ICMP: Error reporting (e.g., unreachable host, TTL expired)
+            IGMP: Manages multicast groups
+
+        3. Transport Layer
+            TCP (Transmission Control Protocol)
+            → Reliable, connection-oriented, uses segments, ensures in-order delivery
+            UDP (User Datagram Protocol)
+            → Fast, connectionless, minimal error control
+            SCTP (Stream Control Transmission Protocol)
+            → Combines best of TCP & UDP, used in VoIP
+
+        4. Application Layer
+            Includes all high-level services & protocols:
+            HTTP/HTTPS – web
+            SMTP/POP3/IMAP – email
+            FTP – file transfer
+            Telnet/SSH – remote login
+            DNS – hostname to IP resolution
+
+    🧠 Modular & Hierarchical: Each protocol can function independently but cooperates with others as needed.
+
+    📌 Definitions You Must Know
+        Term	         Definition
+        Datagram	    Packet format used by IP; no guarantee of delivery
+        Segment	         Data unit at transport layer (TCP)
+        Best-effort delivery	IP tries to deliver data but makes no guarantees
+        ARP	            Finds MAC address from IP
+        RARP	         Finds IP from MAC
+        ICMP	        Sends error messages
+        IGMP	        Manages group communication
+        Port	        Identifies a process on a host (used by TCP/UDP)
+

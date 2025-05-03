@@ -1,0 +1,88 @@
+🧠 2.5 Addressing (TCP/IP Model)
+    In an internet using TCP/IP protocols, four levels of addresses are used:
+
+    Type        	Layer	            Example             	Size
+    Physical    	Data Link Layer	    07:01:02:01:2C:4B	    48 bits (Ethernet)
+    Logical (IP)	Network Layer	    192.168.1.1	            32 bits (IPv4)
+    Port	        Transport Layer	    80, 443, 21	            16 bits
+    Specific    	Application Layer	www.google.com, email	Variable (human-friendly)
+
+    1. Physical Address (Link Address)
+        Address assigned by NIC hardware.
+        Used within a LAN/WAN, not across networks.
+        Example: MAC Address in Ethernet (6 bytes / 48 bits): 07:01:02:01:2C:4B
+        Changes at each hop in internetwork.
+
+    🧩 Frame Header at Data Link Layer:
+        Source physical address
+        Destination physical address
+
+    📝 Example:
+     Sender with MAC 10 sends frame to receiver with MAC 87. All nodes receive the frame, but only node 87 accepts it.
+
+    2. Logical Address (IP Address)
+        Assigned by software (IP layer), used across different networks.
+        Universal addressing scheme — independent of underlying hardware.
+        Remains the same from source to destination.
+        Example: 192.168.0.5
+
+    📝 Used in the IP packet:
+        Logical source address
+        Logical destination address
+
+    🧩 Routing Use:
+        Routers use logical addresses to route packets.
+        Each router interface has a different IP address (and physical address).
+
+    3. Port Address
+        Identifies a specific process (application) on a host.
+        Required for process-to-process communication.
+        Length: 16 bits
+        Example: HTTP → 80, HTTPS → 443, FTP → 21
+
+    🧩 Used in Transport Layer (TCP/UDP):
+        Source port
+        Destination port
+
+    📝 Example:
+         Port a on sender communicates with port j on receiver (e.g., FTP client/server).
+
+    4. Specific Address (User-Friendly)
+        Used by applications.
+        Examples:
+        Email: vaishali@example.com
+        URL: https://www.google.com
+
+    Converted into IP + Port by the application layer.
+    🧠 Resolved via DNS or other application protocols.
+
+    1. Physical Address (Link Layer – MAC Address)
+    🧑‍💻 Story:
+    Alice wants to send a file to Bob on the same local network.
+    Her computer has a physical address (MAC) of 10:20:30:40:50:60.
+    Bob’s MAC is AA:BB:CC:DD:EE:FF.
+    The frame is sent across the LAN with Bob's MAC in the destination field.
+    Only Bob's machine accepts it; others ignore it.
+    ✅ Key: Used within a LAN, changes at every hop.
+
+2. Logical Address (Network Layer – IP Address)
+    🌐 Story:
+    Alice is in India and wants to video call her friend Bob in Canada.
+    Her device has the IP address 192.168.1.2, Bob’s has 203.0.113.5.
+    Routers use these IP addresses to route the packet across the internet.
+    The IP stays the same across all hops.
+    ✅ Key: Unique across networks, doesn’t change during transmission.
+
+3. Port Address (Transport Layer – Process Level)
+    ⚙️ Story:
+    Alice opens her browser and visits www.example.com.
+    The browser uses port 12345 (source), and connects to port 80 (destination, HTTP) on the server.
+    This ensures the request reaches the correct application on the server.
+    ✅ Key: Identifies specific applications/processes on a device.
+
+4. Specific Address (Application Layer – URL or Email)
+    📧 Story:
+    Alice sends an email to bob@example.com.
+    This is a specific address used by humans.
+    Behind the scenes, it is translated into an IP and port by DNS and mail protocols.
+    ✅ Key: User-friendly address, gets resolved to IP + port.
